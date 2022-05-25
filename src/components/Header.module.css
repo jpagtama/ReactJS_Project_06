@@ -1,0 +1,29 @@
+.header {
+    height: 12%;
+    width: 100%;
+    background-color: burlywood;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 3px 15px 3px rgba(0,0,0,0.2);
+}
+.headerContent {
+    width: 90%;
+    margin: auto;
+}
+.headerContent h1 {
+    display: block;
+    float: left;
+}
+.cart {
+    float: right;
+    margin-top: 10%;
+}
+
+@media (min-width: 768px) {
+    .headerContent span {
+        margin-top: 5%;
+    }
+    .headerContent {
+        width: 60%;
+    }
+}
