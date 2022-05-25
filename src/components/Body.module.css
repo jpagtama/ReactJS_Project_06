@@ -2,3 +2,10 @@
     min-height: 100vh;
     padding-top: 10vh;
 }
+.landingDesc {
+    color:azure;
+    margin: 25% 5%;
+    text-align: center;
+    background-color: lightslategray;
+    padding: 10px;
+}

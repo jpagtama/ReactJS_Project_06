@@ -16,12 +16,29 @@
 }
 .cart {
     float: right;
-    margin-top: 10%;
+    margin-top: 7%;
+}
+.cart button {
+    color:aliceblue;
+    border-radius: 24px;
+    background-color:darkred;
+    border: none;
+    padding: 10px;
+}
+.cartTitle {
+    display: inline-block;
+    margin-right: 5px;
+}
+.count {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 100px;
+    background-color: crimson;
 }
 
 @media (min-width: 768px) {
-    .headerContent span {
-        margin-top: 5%;
+    .cart {
+        margin-top: 3%;
     }
     .headerContent {
         width: 60%;

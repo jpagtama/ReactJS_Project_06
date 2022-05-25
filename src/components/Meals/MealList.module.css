@@ -1,0 +1,47 @@
+.card {
+    width: 90%;
+    margin: auto auto 10em auto;
+    padding: 15px;
+}
+.row {
+    margin: 1.2rem 0;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid lightgray;
+}
+.descBox {
+    display: inline-block;
+    width: 50%;
+}
+.price {
+    color:darkred;
+}
+.discBox b, .descBox i {
+    display: block;
+    clear:both;
+}
+.list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.cartBox {
+    display: inline-block;
+    width: 40%;
+    float: right;
+    text-align: right;
+}
+.cartBox button {
+    display:block;
+    float: right;
+    clear:both;
+    margin-top: 5px;
+    padding: 5px 20px;
+    border-radius: 14px;
+    border: none;
+    color:aliceblue;
+    background-color: darkred;
+}
+.actionRow {
+    display:block;
+    width: 100%;
+}
