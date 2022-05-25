@@ -4,8 +4,15 @@
 }
 .landingDesc {
     color:azure;
-    margin: 25% 5%;
+    width: 90%;
+    margin: 7rem auto 2rem auto;
     text-align: center;
     background-color: lightslategray;
     padding: 10px;
+}
+
+@media (min-width:768px) {
+    .landingDesc {
+        width: 50%;
+    }
 }
