@@ -40,6 +40,7 @@
     border: none;
     color:aliceblue;
     background-color: darkred;
+    cursor: pointer;
 }
 .actionRow {
     display:block;
