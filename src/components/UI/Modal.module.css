@@ -1,0 +1,8 @@
+.modal {
+    position: fixed;
+    top: 30vh;
+    width: 80%;
+    margin-left: 10%;
+    display:block;
+    background-color: azure;
+}

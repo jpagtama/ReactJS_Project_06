@@ -10,7 +10,7 @@ const Header = () => {
             <div className={styles.headerContent} >
                 <h1>ReactMeals</h1>
                 <div className={styles.cart}>
-                    <button >
+                    <button onClick={ctx.onViewCart}>
                         <b className={styles.cartTitle}>Your Cart</b>
                         <div className={styles.count} >{ctx.cartCount}</div>
                     </button>
