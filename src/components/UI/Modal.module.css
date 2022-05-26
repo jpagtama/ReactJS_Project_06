@@ -1,8 +1,17 @@
 .modal {
     position: fixed;
-    top: 30vh;
-    width: 80%;
-    margin-left: 10%;
+    top: 20vh;
+    width: 90%;
+    margin-left: 5%;
     display:block;
+    z-index:20;
     background-color: azure;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .modal {
+        width: 80%;
+        margin-left: 10%;
+    }
 }

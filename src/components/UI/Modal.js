@@ -1,18 +1,16 @@
-import { useContext } from 'react'
+import React from 'react'
 import styles from './Modal.module.css'
-import CartContext from '../../store/cart-context'
 import Card from './Card'
 import BackDrop from './BackDrop'
 
 const Modal = props => {
-    const ctx = useContext(CartContext)
     return (
-        <BackDrop>
+        <React.Fragment>
             <Card className={styles.modal} >
-                <h1>Your Cart</h1>
-                <button onClick={ctx.onCloseCart}>Close</button>
+                {props.children}
             </Card>
-        </BackDrop>
+            <BackDrop />
+        </React.Fragment>
     )
 }
 export default Modal
