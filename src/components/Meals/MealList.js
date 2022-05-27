@@ -21,8 +21,8 @@ const MealList = props => {
                         <b className={styles.price}>${item.price}</b>
                     </div>
                     <div className={styles.cartBox}>
-                        <label htmlFor="amount">Amount: </label>
-                        <input id="amount" value={amount} onChange={amountHandler} type="number" step="1" min="1" max="10" size="2"/>
+                        <label htmlFor={`amount_${item.id}`} >Amount: </label>
+                        <input id={`amount_${item.id}`} value={amount} onChange={amountHandler} type="number" step="1" min="1" max="10" size="2"/>
                         <div className={styles.actionRow}>
                             <button onClick={() => ctx.onAddToCart(item.id,amount)} >+ Add</button>
                         </div>
