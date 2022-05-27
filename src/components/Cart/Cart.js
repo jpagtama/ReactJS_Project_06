@@ -1,10 +1,22 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import CartContext from '../../store/cart-context'
 import Modal from '../UI/Modal'
 import styles from './Cart.module.css'
 
 const Cart = props => {
+    const [total, setTotal] = useState(0)
     const ctx = useContext(CartContext)
+
+    useEffect(() => {
+        setTotal(
+            ctx.cart.reduce((total,item) => {
+                const qty = item.quantity
+                let [cost] = props.meals.filter(i => i.id === item.id)
+                cost = cost.price
+                return total + (qty * cost)
+            }, 0)
+        )
+    }, [ctx.cart,props.meals])
 
     const items = (
         ctx.cart.map((cartItem) => {
@@ -33,6 +45,9 @@ const Cart = props => {
                 <header><h1>Your Cart</h1></header>
                 <div className={styles.content} >
                     {items}
+                    <div>
+                        <h2>Total Amount: ${total}</h2>
+                    </div>
                 </div>
                 <footer>
                     <button className={styles.cancelBtn} onClick={ctx.onCloseCart} >Cancel</button>
