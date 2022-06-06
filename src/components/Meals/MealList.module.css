@@ -42,10 +42,6 @@
     background-color: darkred;
     cursor: pointer;
 }
-.actionRow {
-    display:block;
-    width: 100%;
-}
 
 @media (min-width:768px) {
     .card {

@@ -1,15 +1,8 @@
-import { useState, useContext } from 'react'
-import CartContext from '../../store/cart-context'
 import styles from './MealList.module.css'
 import Card from '../UI/Card'
+import MealAddForm from './MealAddForm'
 
 const MealList = props => {
-    const [amount, setAmount] = useState(1)
-    const ctx = useContext(CartContext)
-
-    const amountHandler = event => {
-        setAmount(+event.target.value)
-    }
 
     let meals = props.meals.map((item) => {
         return (
@@ -21,11 +14,7 @@ const MealList = props => {
                         <b className={styles.price}>${item.price}</b>
                     </div>
                     <div className={styles.cartBox}>
-                        <label htmlFor={`amount_${item.id}`} >Amount: </label>
-                        <input id={`amount_${item.id}`} value={amount} onChange={amountHandler} type="number" step="1" min="1" max="10" size="2"/>
-                        <div className={styles.actionRow}>
-                            <button onClick={() => ctx.onAddToCart(item.id,amount)} >+ Add</button>
-                        </div>
+                        <MealAddForm item={item} />
                     </div>
                 </div>
             </li>
