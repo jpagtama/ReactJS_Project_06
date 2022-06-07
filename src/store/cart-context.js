@@ -28,7 +28,7 @@ export const CartContextProvider = props => {
 
     const onAddToCart = (id,qty) => {
         setCart(prevState => {
-            let newState = [...prevState]
+            let newState = [...prevState].map(i => ({id: i.id, quantity: i.quantity}))
             if (!newState.length || !containsId(newState,id)) {
                 newState.push({id:id, quantity:qty})
             } else {
