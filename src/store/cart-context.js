@@ -45,11 +45,12 @@ export const CartContextProvider = props => {
     const onRemoveFromCart = (id) => {
         setCart(prevState => {
             let newState = [...prevState].map(item => {
-                if (item.id === id) {
-                    item.quantity -= 1
-                    return item
+                let itemCopy = {...item}
+                if (itemCopy.id === id) {
+                    itemCopy.quantity -= 1
+                    return itemCopy
                 } else {
-                    return item
+                    return itemCopy
                 }
             })
             newState = newState.filter(item => {
