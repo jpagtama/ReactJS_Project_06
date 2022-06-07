@@ -9,7 +9,7 @@ const MealAddForm = props => {
 
     const addToCartHandler = (e) => {
         e.preventDefault()
-        cartContext.onAddToCart(props.item.id,amountInputRef.current.value)
+        cartContext.onAddToCart(props.item.id,+amountInputRef.current.value)
     }
 
     return (
