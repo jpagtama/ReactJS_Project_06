@@ -1,9 +1,14 @@
-import styles from './Body.module.css'
+import React, { useContext } from 'react'
+import CartContext from '../store/cart-context'
 import Card from './UI/Card'
 import MealList from './Meals/MealList'
+import styles from './Body.module.css'
+import PlaceOrder from './Cart/PlaceOrder'
 
 const Body = props => {
+    const cartContext = useContext(CartContext)
 
+    if (cartContext.viewOrder) return <div className={styles.body}><PlaceOrder /></div>
     return (
         <div className={styles.body}>
             <Card className={styles.landingDesc}>
@@ -16,7 +21,8 @@ const Body = props => {
                     <h2 style={{marginTop:"10rem",padding:"none",margin:"none"}}>Loading...</h2>
                 </div> 
             : 
-                <MealList meals={props.meals} />}
+                <MealList meals={props.meals} />
+            }
         </div>
     )
 }
