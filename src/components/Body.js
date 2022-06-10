@@ -11,7 +11,12 @@ const Body = props => {
                 <p>Choose your favorite meal from our broad selection of and enjoy a delicious lunch or dinner at home</p>
                 <p>All our meals are cooked to order with high quality ingredients and by experienced chefs!</p>
             </Card>
-            <MealList meals={props.meals} />
+            {props.isLoading? 
+                <div style={{width:"100%",textAlign:"center"}}>
+                    <h2 style={{marginTop:"10rem",padding:"none",margin:"none"}}>Loading...</h2>
+                </div> 
+            : 
+                <MealList meals={props.meals} />}
         </div>
     )
 }
