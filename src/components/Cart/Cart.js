@@ -38,6 +38,9 @@ const Cart = props => {
             )
         })
     )
+    const checkOutHandler = () => {
+        ctx.onViewOrder()
+    }
 
     return (
         <Modal >
@@ -51,7 +54,7 @@ const Cart = props => {
                 </div>
                 <footer>
                     <button className={styles.cancelBtn} onClick={ctx.onCloseCart} >Cancel</button>
-                    <button className={styles.orderBtn} >Order</button>
+                    <button onClick={checkOutHandler} className={styles.orderBtn} >Checkout</button>
                 </footer>
             </div>
         </Modal>
