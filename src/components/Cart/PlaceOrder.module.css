@@ -1,0 +1,43 @@
+.form {
+    width: 90%;
+    margin: auto;
+}
+.form input {
+    width: 100%;
+    padding: 0.4rem;
+    margin-bottom: 1.2rem;
+}
+.form button {
+    padding: 0.4rem;
+    border-radius:5px;
+    cursor: pointer;
+    margin: auto 1rem;
+}
+.errorMessage {
+    font-size:small;
+    color: lightcoral;
+    margin-left: 1rem;
+}
+.placeOrderBtn {
+    color: white;
+    border: none;
+    float: right;
+    background-color: indianred;
+}
+.cancelBtn {
+    color: indianred;
+    border: 1px solid indianred;
+    float: right;
+}
+.label {
+    width: 100%;
+}
+/* .addressSection {
+
+} */
+
+@media (min-width: 768px) {
+    .form {
+        width: 60%; 
+    }
+}
