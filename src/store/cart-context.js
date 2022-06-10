@@ -3,13 +3,15 @@ import React, { useState, useEffect } from 'react'
 const CartContext = React.createContext({
     cart: [],
     onAddToCart: (id,qty) => {},
-    onRemoveFromCart: (id) => {}
+    onRemoveFromCart: (id) => {},
+    viewOrder: false
 })
 
 export const CartContextProvider = props => {
     const [cart, setCart] = useState([])
     const [cartCount, setCartCount] = useState(0)
     const [viewCart, setViewCart] = useState(false)
+    const [viewOrder, setViewOrder] = useState(false)
 
     useEffect(() => {
         setCartCount(cart.reduce((total,item) => { return total + item.quantity},0))
@@ -60,9 +62,16 @@ export const CartContextProvider = props => {
             return newState
         })
     }
+    const viewOrderHandler = () => {
+        setViewCart(false)
+        setViewOrder(true)
+    }
+    const closeOrderHandler = () => {
+        setViewOrder(false)
+    }
 
     return (
-        <CartContext.Provider value={{cart:cart,viewCart:viewCart,cartCount:cartCount,onAddToCart:onAddToCart,onRemoveFromCart:onRemoveFromCart,onViewCart:onViewCart,onCloseCart:onCloseCart}} >{props.children}</CartContext.Provider>
+        <CartContext.Provider value={{cart:cart,viewCart:viewCart,cartCount:cartCount,onAddToCart:onAddToCart,onRemoveFromCart:onRemoveFromCart,onViewCart:onViewCart,onCloseCart:onCloseCart,viewOrder,onViewOrder:viewOrderHandler,onCloseOrder:closeOrderHandler}} >{props.children}</CartContext.Provider>
     )
 }
 
